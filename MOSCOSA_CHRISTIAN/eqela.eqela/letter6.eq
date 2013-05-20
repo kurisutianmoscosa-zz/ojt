@@ -1,4 +1,4 @@
-class letter5 : AlignWidget, EventReceiver
+class letter6 : AlignWidget, EventReceiver
 {
 	SingleChangerWidget s;
 	VBoxWidget r;
@@ -13,8 +13,8 @@ class letter5 : AlignWidget, EventReceiver
 
 	int timer = 10;
 
-	public static letter5 create(AlignWidget app) {
-		var v = new letter5();
+	public static letter6 create(AlignWidget app) {
+		var v = new letter6();
 		v.app = app;
 		return(v);
 	}
@@ -30,8 +30,8 @@ class letter5 : AlignWidget, EventReceiver
 
 
 		//REVISIONS
-		add_align(0, -0.8, y= LabelWidget.instance().set_text("Quiz#5").set_color(Color.instance("#000000")).set_font(Font.instance("10mm")));
-		add_align(0, -0.2, y= LabelWidget.instance().set_text("8 - 3 = ?").set_color(Color.instance("#000000")).set_font(Font.instance("7mm")));
+		add_align(0, -0.8, y= LabelWidget.instance().set_text("Quiz#6").set_color(Color.instance("#000000")).set_font(Font.instance("10mm")));
+		add_align(0, -0.2, y= LabelWidget.instance().set_text("10 / 5 = ?").set_color(Color.instance("#000000")).set_font(Font.instance("7mm")));
 		vb.add(tw = TextInputWidget.instance());
 		add_align(0, 0.4, bw= ButtonWidget.instance().set_text("OK").set_event("answer"));
 		
@@ -39,8 +39,7 @@ class letter5 : AlignWidget, EventReceiver
 
 
 
-		add_align(0.3, -1, y= LabelWidget.instance().set_text("Time:").set_color(Color.instance("#000000")).set_font(Font.instance("6mm")));
-		add_align(0.6, -1,  y= LabelWidget.for_string("".append(String.for_integer(timer))).set_color(Color.instance("#000000")).set_font(Font.instance("5mm")));
+		add_align(0.8, -1,  y= LabelWidget.for_string("".append(String.for_integer(timer))).set_color(Color.instance("#000000")).set_font(Font.instance("5mm")));
 
 		
 	}
@@ -53,10 +52,10 @@ class letter5 : AlignWidget, EventReceiver
 						s.show(this, menuWidget.create(AlignWidget.instance()), CrossFadeTransition.instance());
 					}
 					else if(i.equals("okay2")) {  //NEW WINDOW
-						s.show(this, letter6.create(AlignWidget.instance()), CrossFadeTransition.instance());			
+						s.show(this, congrats.create(AlignWidget.instance()), CrossFadeTransition.instance());			
 					}				
 					else if(i.equals("answer")) {
-						if(tw.get_text().equals("5")) {				
+						if(tw.get_text().equals("2")) {				
 							Popup.widget(get_engine(),DialogWidget.message("You Got it Correct!","Congratulations!", "okay2",true).set_listener(this));		
 						}
 						else {			

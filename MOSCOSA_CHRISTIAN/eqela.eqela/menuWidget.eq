@@ -23,9 +23,12 @@ class menuWidget : AlignWidget, EventReceiver
 	
 		add_align(0, 0, vb = VBoxWidget.instance());
 		set_background(ImageWidget.for_icon("bg"));
-		vb.add_vbox(0, ButtonWidget.instance().set_text("Number Quiz").set_event("number").set_font(Font.instance("3mm")));
-		vb.add_vbox(0, ButtonWidget.instance().set_text("Shapes").set_event("shapes").set_font(Font.instance("3mm")));	
-		vb.add_vbox(0, ButtonWidget.instance().set_text("Alphabet").set_event("alphabet").set_font(Font.instance("3mm")));	
+
+		vb.add_vbox(0, ButtonWidget.instance().set_text("Shapes Everywhere").set_event("shapes").set_font(Font.instance("3mm")));
+		vb.add_vbox(0, ButtonWidget.instance().set_text("Learn Alphabet").set_event("alphabet").set_font(Font.instance("3mm")));		
+		vb.add_vbox(0, ButtonWidget.instance().set_text("Deal with Numbers").set_event("number").set_font(Font.instance("3mm")));
+
+
 		}
 	public void on_event(Object o) {
 	if(o!=null)
