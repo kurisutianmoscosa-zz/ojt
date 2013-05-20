@@ -1,0 +1,14 @@
+class Main : ApplicationWidget
+{
+	public Main() {
+	}
+
+	public Object get_splash() {
+		return("picture");
+	}
+
+	public Widget get_main_widget() {
+		AlignWidget a = AlignWidget.instance();
+		return(menuWidget.create(a));
+	}
+}
