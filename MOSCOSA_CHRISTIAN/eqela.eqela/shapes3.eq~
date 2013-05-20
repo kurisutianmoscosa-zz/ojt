@@ -16,7 +16,7 @@ class shapes3 : AlignWidget, EventReceiver
 		base.initialize();
 	
 		add_align(-1, 1, vb = VBoxWidget.instance());
-		set_background(ImageWidget.for_icon("bg3"));
+		set_background(ImageWidget.for_icon("bg2"));
 		add_align(0.35, -0.55, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("circle"),80,60)).set_event("cir"));
 		add_align(-0.35, -0.55, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("heart"),57,57)).set_event("hrt"));
 		add_align(0, -0.55, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("rectangle"),57,56)).set_event("rec"));

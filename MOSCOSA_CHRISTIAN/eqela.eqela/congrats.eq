@@ -4,6 +4,7 @@ class congrats : AlignWidget, EventReceiver
 	VBoxWidget r;
 	AlignWidget app;
 	VBoxWidget vb;
+	bool b;
 	
 
 	public static congrats create(AlignWidget app) {
@@ -14,13 +15,12 @@ class congrats : AlignWidget, EventReceiver
 
 	public override void initialize() {
 		base.initialize();
-	
+			
 		add_align(-1.0, -1.0, vb = VBoxWidget.instance());
 		set_background(ImageWidget.for_icon("congrats"));
-		vb.add_vbox(0, ButtonWidget.instance().set_text("OK").set_event("ok"));
-			
-	}
-		
+		vb.add_vbox(0, ButtonWidget.instance().set_text("OK").set_event("ok"));		
+
+	}	
 	public void on_event(Object o) {
 	if(o!=null)
 	{
@@ -31,8 +31,13 @@ class congrats : AlignWidget, EventReceiver
 				{
 					s.show(this, menuWidget.create(AlignWidget.instance()), CrossFadeTransition.instance());
 				}
+				IFDEF("target_android") {
+					AudioPlayer.play(AudioClip.for_resource("cong"));
+				}
+				ELSE {
+					Log.message("music");
+				}
 			}
 		}
-	}
-}	
-
+	}		
+}

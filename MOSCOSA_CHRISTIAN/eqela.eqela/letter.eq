@@ -8,6 +8,9 @@ class letter : AlignWidget, EventReceiver
 	String x;
 	ButtonWidget a;
 	LabelWidget y;
+	ButtonWidget bw;
+	TextInputWidget tw;	
+
 	int timer = 15;
 
 	public static letter create(AlignWidget app) {
@@ -24,8 +27,19 @@ class letter : AlignWidget, EventReceiver
 		set_background(ImageWidget.for_icon("sun"));
 		//vb.add_vbox(0, ButtonWidget.instance().set_text("HELLO"));
 		//add_align(-1, 1, ButtonWidget.instance().set_text("Back").set_event("back"));
-		Popup.widget(get_engine(),TextInputDialogWidget.instance("Quiz #1","5 + 4",null,"Put your answer here",null, this));
-		add_align(1, -1,  y= LabelWidget.for_string("".append(String.for_integer(timer))).set_color(Color.instance("#000000")).set_font(Font.instance("3mm")));
+
+
+		//REVISIONS
+		add_align(0, -0.8, y= LabelWidget.instance().set_text("Quiz#1").set_color(Color.instance("#000000")).set_font(Font.instance("10mm")));
+		add_align(0, -0.2, y= LabelWidget.instance().set_text("5 + 4 = ?").set_color(Color.instance("#000000")).set_font(Font.instance("7mm")));
+		vb.add(tw = TextInputWidget.instance().set_text(""));
+		add_align(0, 0.4, bw= ButtonWidget.instance().set_text("OK").set_event(this));
+		
+		//Popup.widget(get_engine(),TextInputDialogWidget.instance("Quiz #1","5 + 4",null,"Put your answer here",null, this));
+
+
+
+		add_align(0.8, -1,  y= LabelWidget.for_string("".append(String.for_integer(timer))).set_color(Color.instance("#000000")).set_font(Font.instance("5mm")));
 
 		
 	}
@@ -70,5 +84,5 @@ class letter : AlignWidget, EventReceiver
 		}
 		invalidate();
 	}
-}
+}	
 
