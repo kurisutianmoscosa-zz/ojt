@@ -1,0 +1,60 @@
+package com.example.easyabc;
+
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.View;
+
+
+	public class ThirdActivity extends Activity {
+
+		MediaPlayer a;
+		
+		
+		
+		
+		@Override
+		protected void onCreate(Bundle savedInstanceState) {
+			super.onCreate(savedInstanceState);
+			this.setContentView(R.layout.activity_third);
+		}
+
+		
+		public void a1(View v) {
+			a = MediaPlayer.create(ThirdActivity.this, R.raw.leta);
+			a.start(); 
+			
+		}
+		public void a2(View v) {
+
+				a = MediaPlayer.create(ThirdActivity.this,R.raw.letb);
+				a.start(); 
+
+		}
+			
+	
+		
+	}	
+		
+		
+		
+		
+		
+		@Override
+		public boolean onCreateOptionsMenu(Menu menu) {
+			// Inflate the menu; this adds items to the action bar if it is present.
+			getMenuInflater().inflate(R.menu.third, menu);
+			return true;
+			
+			
+			
+			
+			
+		}
+
+	}
+
+	
+	
+

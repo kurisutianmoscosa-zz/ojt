@@ -1,0 +1,59 @@
+class shapes : AlignWidget, EventReceiver
+{
+	SingleChangerWidget s;
+	VBoxWidget r;
+	AlignWidget app;
+	VBoxWidget vb;
+	
+
+	public static shapes create(AlignWidget app) {
+		var v = new shapes();
+		v.app = app;
+		return(v);	
+	}
+
+	public override void initialize() {
+		base.initialize();
+	
+		add_align(-1, 1, vb = VBoxWidget.instance());
+		set_background(ImageWidget.for_icon("bg2"));
+		add_align(0.35, -0.55, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("rectangle"),80,60)).set_event("rec"));
+		add_align(-0.35, -0.55, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("diamond"),57,57)).set_event("dia"));
+		add_align(0, -0.55, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("triangle"),57,56)).set_event("tri"));
+
+		add_align(0, 0, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("triangle"),57,56)).set_event("tri")); //CORRECT!
+		vb.add_vbox(0, ButtonWidget.instance().set_text("Back").set_event("back"));
+		
+	}
+			
+	public void on_event(Object o) {
+	if(o!=null)
+	{
+		if(o is String)
+			{
+				var i = o as String;
+				if(i.equals("back"))
+				{
+					s.show(this, menuWidget.create(AlignWidget.instance()), CrossFadeTransition.instance());
+				}
+				//SHAPES
+				if(i.equals("rec"))
+				{
+					s.show(this, menuWidget.create(AlignWidget.instance()), CrossFadeTransition.instance());
+				}
+				if(i.equals("dia"))
+				{
+					s.show(this, menuWidget.create(AlignWidget.instance()), CrossFadeTransition.instance());	
+				} //CORRECT!
+				if(i.equals("tri"))
+				{
+					Popup.widget(get_engine(),DialogWidget.message("You click correct shape!","Congratulations!", "okay2",true).set_listener(this));
+				}
+				else if(i.equals("okay2")) {
+					s.show(this, menuWidget.create(AlignWidget.instance()), CrossFadeTransition.instance());			
+				}	
+			}
+		}	
+	}
+}	
+

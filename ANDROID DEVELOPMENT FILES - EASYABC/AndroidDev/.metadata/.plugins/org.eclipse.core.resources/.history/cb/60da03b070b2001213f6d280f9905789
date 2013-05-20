@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EasyABC</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    
+    
+    <string name="app_name">EasyABC</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <string name="textView1">Welcome to EasyABC</string>
+    <string name="button1">Learn Alphabet</string>
+    <string name="button2">Deal with Numbers</string>
+    <string name="button3">Shapes anywhere</string>
+    
+    
+    
+    <string name="alpha1">A</string>
+    <string name="alpha2">B</string>
+    <string name="alpha3">C</string>
+    <string name="alpha4">D</string>
+    <string name="alpha5">E</string>
+    <string name="title_activity_third">ThirdActivity</string>
+    
+    
+    <string name="textView2">Let`s count from 1 to 10</string>
+
+</resources>

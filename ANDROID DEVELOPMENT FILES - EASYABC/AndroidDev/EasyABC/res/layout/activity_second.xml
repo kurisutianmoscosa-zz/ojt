@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+
+   <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="400dp" >
+
+   <LinearLayout
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+      
+    
+    <Button
+        android:id="@+id/alpha1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="@string/alpha1"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:onClick="a1"></Button>
+
+    <Button
+        android:id="@+id/alpha2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:text="@string/alpha2"
+        android:textStyle="bold"
+        android:onClick="a2"></Button> 
+
+    <Button
+        android:id="@+id/alpha3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha3" 
+		android:onClick="a3"></Button> 
+		
+    <Button
+        android:id="@+id/alpha4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha4"
+        android:onClick="a4"></Button>  
+
+    <Button
+        android:id="@+id/alpha5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha5"
+        android:onClick="a5"></Button> 
+    <Button
+        android:id="@+id/alpha6"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha6"
+        android:onClick="a6"></Button> 
+        
+    
+  
+
+	<Button
+        android:id="@+id/alpha7"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/alpha7"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:onClick="a7"></Button>
+
+    <Button
+        android:id="@+id/alpha8"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:text="@string/alpha8"
+        android:textStyle="bold"
+        android:onClick="a8"></Button> 
+
+    <Button
+        android:id="@+id/alpha9"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha9" 
+		android:onClick="a9"></Button> 
+		
+    <Button
+        android:id="@+id/alpha10"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha10"
+        android:onClick="a10"></Button>  
+
+    <Button
+        android:id="@+id/alpha11"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha11"
+        android:onClick="a11"></Button> 
+    <Button
+        android:id="@+id/alpha12"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha12"
+        android:onClick="a12"></Button> 
+   
+    
+    <Button
+        android:id="@+id/alpha13"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/alpha13"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:onClick="a13"></Button>
+
+    <Button
+        android:id="@+id/alpha14"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:text="@string/alpha14"
+        android:textStyle="bold"
+        android:onClick="a14"></Button> 
+
+    <Button
+        android:id="@+id/alpha15"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha15" 
+		android:onClick="a15"></Button> 
+		
+    <Button
+        android:id="@+id/alpha16"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha16"
+        android:onClick="a16"></Button>  
+
+    <Button
+        android:id="@+id/alpha17"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha17"
+        android:onClick="a17"></Button> 
+    <Button
+        android:id="@+id/alpha18"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha18"
+        android:onClick="a18"></Button>  
+
+  <Button
+        android:id="@+id/alpha19"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha19"
+        android:onClick="a19"></Button> 
+    <Button
+        android:id="@+id/alpha20"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha20"
+        android:onClick="a20"></Button> 
+   
+    
+    <Button
+        android:id="@+id/alpha21"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/alpha21"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:onClick="a21"></Button>
+
+    <Button
+        android:id="@+id/alpha22"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:text="@string/alpha22"
+        android:textStyle="bold"
+        android:onClick="a122"></Button> 
+
+    <Button
+        android:id="@+id/alpha23"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha23" 
+		android:onClick="a23"></Button> 
+		
+    <Button
+        android:id="@+id/alpha24"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha24"
+        android:onClick="a24"></Button>  
+
+    <Button
+        android:id="@+id/alpha25"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha25"
+        android:onClick="a25"></Button> 
+    <Button
+        android:id="@+id/alpha26"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha26"
+        android:onClick="a26"></Button>
+   
+        
+        </LinearLayout>
+        </ScrollView> 
+</LinearLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical" >
+    
+   <ScrollView
+       android:layout_width="fill_parent"
+       android:layout_height="500dp"/>
+   <LinearLayout
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+       
+   
+    
+    <Button
+        android:id="@+id/alpha1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="45dp"
+        android:text="@string/alpha1"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:onClick="a1" />
+
+    <Button
+        android:id="@+id/alpha2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:text="@string/alpha2"
+        android:textStyle="bold"
+        android:onClick="a2" /> 
+
+    <Button
+        android:id="@+id/alpha3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha3" 
+		android:onClick="a3" /> 
+		
+    <Button
+        android:id="@+id/alpha4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha4"
+        android:onClick="a4" />  
+
+    <Button
+        android:id="@+id/alpha5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha5"
+        android:onClick="a5" /> 
+        <Button
+        android:id="@+id/alpha6"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#5a3764"
+        android:textStyle="bold"
+        android:text="@string/alpha5"
+        android:onClick="a6" /> 
+        
+        </LinearLayout>
+        </ScrollView> 
+</LinearLayout>

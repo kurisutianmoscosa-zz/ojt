@@ -1,0 +1,43 @@
+package com.example.easyabc;
+
+import android.app.Activity;
+import android.media.MediaPlayer;
+import android.os.Bundle;
+import android.view.View;
+
+public class SecondActivity extends Activity { 	
+	
+	MediaPlayer a;
+	
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		this.setContentView(R.layout.activity_second);
+		
+		//letter a sound
+	
+	
+			 
+		}
+	
+	
+	
+	public void a1(View v) {
+		a = MediaPlayer.create(SecondActivity.this, R.raw.leta);
+		a.start(); 
+		
+	}
+	public void a2(View v) {
+
+			a = MediaPlayer.create(SecondActivity.this,R.raw.letb);
+			a.start(); 
+
+	}
+		
+	
+
+	
+	
+	
+}
