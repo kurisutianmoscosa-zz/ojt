@@ -4,7 +4,9 @@ class shapes2 : AlignWidget, EventReceiver
 	VBoxWidget r;
 	AlignWidget app;
 	VBoxWidget vb;
-	
+	LabelWidget y;
+	int timer = 10;
+
 	public static shapes2 create(AlignWidget app) {
 		var v = new shapes2();
 		v.app = app;
@@ -12,6 +14,8 @@ class shapes2 : AlignWidget, EventReceiver
 	}
 	public override void initialize() {
 		base.initialize();
+
+		animate(1000000);
 	
 		add_align(-1, 1, vb = VBoxWidget.instance());
 		set_background(ImageWidget.for_icon("bg2"));
@@ -24,6 +28,9 @@ class shapes2 : AlignWidget, EventReceiver
 		add_align(0.55, -0.55, LabelWidget.instance().set_text("STAR").set_color(Color.instance("#000000")));
 		add_align(-0.63, -0.60, LabelWidget.instance().set_text("PENTAGON").set_color(Color.instance("#000000")));
 		add_align(0, -0.64, LabelWidget.instance().set_text("HEART").set_color(Color.instance("#000000")));
+
+		add_align(0.3, -1, y= LabelWidget.instance().set_text("Time:").set_color(Color.instance("#000000")).set_font(Font.instance("5mm")));
+		add_align(0.6, -1,  y= LabelWidget.for_string("".append(String.for_integer(timer))).set_color(Color.instance("#000000")).set_font(Font.instance("5mm")));
 
 
 		add_align(0, 0, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("star"),57,56))); //CORRECT!
@@ -66,6 +73,18 @@ class shapes2 : AlignWidget, EventReceiver
 				}	
 			}
 		}	
+	}
+	public void tick() {
+		if(timer != 0) {
+			timer = timer - 1;
+			y.set_text("".append(String.for_integer(timer)));
+		}
+		else if(timer == 0){
+			animate_stop();
+			Popup.widget(get_engine(),DialogWidget.message("TRY AGAIN!","THANK YOU!"));
+			Popup.widget(get_engine(),DialogWidget.message("YOU ONLY GOT TWO(2) POINTS","ATTENDTION!", "back",true).set_listener(this));		
+		}
+		invalidate();
 	}
 }	
 

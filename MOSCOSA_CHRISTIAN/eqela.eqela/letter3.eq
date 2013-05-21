@@ -65,7 +65,7 @@ class letter3 : AlignWidget, EventReceiver
 			y.set_text("".append(String.for_integer(timer)));
 		}
 		else if(timer == 0){
-			timer--;
+			animate_stop();
 			Popup.widget(get_engine(),DialogWidget.message("TRY AGAIN!","ATTENTION!"));
 			Popup.widget(get_engine(),DialogWidget.message("TIMES UP!","ATTENDTION!", "main",true).set_listener(this));		
 		}

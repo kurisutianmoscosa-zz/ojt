@@ -4,6 +4,8 @@ class shapes : AlignWidget, EventReceiver
 	VBoxWidget r;
 	AlignWidget app;
 	VBoxWidget vb;
+	LabelWidget y;
+	int timer = 10;
 	
 
 	public static shapes create(AlignWidget app) {
@@ -14,19 +16,21 @@ class shapes : AlignWidget, EventReceiver
 
 	public override void initialize() {
 		base.initialize();
+		
+		animate(1000000);
 	
 		add_align(-1, 1, vb = VBoxWidget.instance());
 		set_background(ImageWidget.for_icon("bg2"));
 		add_align(0.35, -0.55, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("rectangle"),80,60)).set_event("rec"));
 		add_align(-0.35, -0.55, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("diamond"),57,57)).set_event("dia"));
 		add_align(0, -0.55, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("triangle"),57,56)).set_event("tri"));
-
-
-		//LABELS
 		
 		add_align(0.65, -0.60, LabelWidget.instance().set_text("RECTANGLE").set_color(Color.instance("#000000")));
 		add_align(-0.65, -0.60, LabelWidget.instance().set_text("DIAMOND").set_color(Color.instance("#000000")));
 		add_align(0, -0.64, LabelWidget.instance().set_text("TRIANGLE").set_color(Color.instance("#000000")));
+
+		add_align(0.3, -1, y= LabelWidget.instance().set_text("Time:").set_color(Color.instance("#000000")).set_font(Font.instance("6mm")));
+		add_align(0.6, -1,  y= LabelWidget.for_string("".append(String.for_integer(timer))).set_color(Color.instance("#000000")).set_font(Font.instance("5mm")));
 
 
 		add_align(0, 0, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("triangle"),57,56))); //CORRECT!
@@ -70,7 +74,20 @@ class shapes : AlignWidget, EventReceiver
 					s.show(this, shapes2.create(AlignWidget.instance()), CrossFadeTransition.instance());			
 				}				
 			}
-		}	
+		}
+	}	
+	public void tick() {
+		if(timer != 0) {
+			timer = timer - 1;
+			y.set_text("".append(String.for_integer(timer)));
+		}
+		else if(timer == 0){
+			animate_stop();
+			Popup.widget(get_engine(),DialogWidget.message("TRY AGAIN!","THANK YOU!"));
+			Popup.widget(get_engine(),DialogWidget.message("YOU GOT NO SCORE!","ATTENDTION!", "back",true).set_listener(this));		
+		}
+		invalidate();	
 	}
-}	
+}
+
 

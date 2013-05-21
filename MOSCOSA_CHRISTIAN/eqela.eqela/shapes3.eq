@@ -4,6 +4,8 @@ class shapes3 : AlignWidget, EventReceiver
 	VBoxWidget r;
 	AlignWidget app;
 	VBoxWidget vb;
+	LabelWidget y;
+	int timer = 10;
 	
 
 	public static shapes3 create(AlignWidget app) {
@@ -14,6 +16,8 @@ class shapes3 : AlignWidget, EventReceiver
 
 	public override void initialize() {
 		base.initialize();
+		
+		animate(1000000);
 	
 		add_align(-1, 1, vb = VBoxWidget.instance());
 		set_background(ImageWidget.for_icon("bg2"));
@@ -24,6 +28,11 @@ class shapes3 : AlignWidget, EventReceiver
 		add_align(0.58, -0.60, LabelWidget.instance().set_text("CIRCLE").set_color(Color.instance("#000000")));
 		add_align(-0.58, -0.60, LabelWidget.instance().set_text("HEART").set_color(Color.instance("#000000")));
 		add_align(0, -0.64, LabelWidget.instance().set_text("RECTANGLE").set_color(Color.instance("#000000")));
+
+		add_align(0.3, -1, y= LabelWidget.instance().set_text("Time:").set_color(Color.instance("#000000")).set_font(Font.instance("5mm")));
+		add_align(0.6, -1,  y= LabelWidget.for_string("".append(String.for_integer(timer))).set_color(Color.instance("#000000")).set_font(Font.instance("5mm")));
+
+
 		add_align(0, 0, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("circle"),57,56))); //CORRECT!
 		vb.add_vbox(0, ButtonWidget.instance().set_text("Back").set_event("back"));
 		
@@ -66,5 +75,17 @@ class shapes3 : AlignWidget, EventReceiver
 			}
 		}	
 	}
-}	
+	public void tick() {
+		if(timer != 0) {
+			timer = timer - 1;
+			y.set_text("".append(String.for_integer(timer)));
+		}
+		else if(timer == 0){
+			animate_stop();
+			Popup.widget(get_engine(),DialogWidget.message("TRY AGAIN!","THANK YOU!"));
+			Popup.widget(get_engine(),DialogWidget.message("YOU ONLY GOT TWO(3) POINTS","ATTENDTION!", "back",true).set_listener(this));		
+		}
+		invalidate();
+	}
+}		
 
