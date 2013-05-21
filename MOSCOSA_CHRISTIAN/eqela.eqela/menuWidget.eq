@@ -8,7 +8,7 @@ class menuWidget : AlignWidget, EventReceiver
 	AlignWidget app;
 	VBoxWidget vb;
 	DialogWidget ui;
-	
+	ButtonWidget bw;
 	
 	
 	public static menuWidget create(AlignWidget app) {
@@ -23,13 +23,19 @@ class menuWidget : AlignWidget, EventReceiver
 	
 		add_align(0, 0, vb = VBoxWidget.instance());
 		set_background(ImageWidget.for_icon("bg"));
-
-		vb.add_vbox(0, ButtonWidget.instance().set_text("Shapes Everywhere").set_event("shapes").set_font(Font.instance("3mm")));
-		vb.add_vbox(0, ButtonWidget.instance().set_text("Learn Alphabet").set_event("alphabet").set_font(Font.instance("3mm")));		
-		vb.add_vbox(0, ButtonWidget.instance().set_text("Deal with Numbers").set_event("number").set_font(Font.instance("3mm")));
-
-
+	
+		add_align(0, -0.1, bw = ButtonWidget.instance().set_text("Shapes Everywhere").set_event("shapes").set_font(Font.instance("3mm")));
+		add_align(0, 0.2, bw = ButtonWidget.instance().set_text("Learn Alphabet").set_event("alphabet").set_font(Font.instance("3mm")));		
+		add_align(0, 0.5, bw = ButtonWidget.instance().set_text("Deal with Numbers").set_event("number").set_font(Font.instance("3mm")));
+		
+		IFDEF("target_android") {
+			AudioPlayer.play(AudioClip.for_resource("welcome1"));
+		}	
+		ELSE {
+			Log.message("music");
 		}
+
+	}
 	public void on_event(Object o) {
 	if(o!=null)
 	{

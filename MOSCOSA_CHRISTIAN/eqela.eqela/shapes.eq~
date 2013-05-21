@@ -16,7 +16,7 @@ class shapes : AlignWidget, EventReceiver
 		base.initialize();
 	
 		add_align(-1, 1, vb = VBoxWidget.instance());
-		set_background(ImageWidget.for_icon("lights"));
+		set_background(ImageWidget.for_icon("bg2"));
 		add_align(0.35, -0.55, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("rectangle"),80,60)).set_event("rec"));
 		add_align(-0.35, -0.55, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("diamond"),57,57)).set_event("dia"));
 		add_align(0, -0.55, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("triangle"),57,56)).set_event("tri"));
@@ -47,10 +47,16 @@ class shapes : AlignWidget, EventReceiver
 				//CORRECT!
 				else if(i.equals("rec"))
 				{
+					IFDEF("target_android") {
+						AudioPlayer.play(AudioClip.for_resource("sorry"));
+					}
 					Popup.widget(get_engine(),DialogWidget.message("You clicked the wrong shape!","Oh no!", null));
 				}
 				else if(i.equals("dia"))
 				{
+					IFDEF("target_android") {
+						AudioPlayer.play(AudioClip.for_resource("sorry"));
+					}
 					Popup.widget(get_engine(),DialogWidget.message("You clicked the wrong shape!","Oh no!", null));
 				}
 				else if(i.equals("tri")) //CORRECT!

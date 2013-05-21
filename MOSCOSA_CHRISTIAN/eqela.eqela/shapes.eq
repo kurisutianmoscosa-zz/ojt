@@ -47,14 +47,23 @@ class shapes : AlignWidget, EventReceiver
 				//CORRECT!
 				else if(i.equals("rec"))
 				{
+					IFDEF("target_android") {
+						AudioPlayer.play(AudioClip.for_resource("sorry"));
+					}
 					Popup.widget(get_engine(),DialogWidget.message("You clicked the wrong shape!","Oh no!", null));
 				}
 				else if(i.equals("dia"))
 				{
+					IFDEF("target_android") {
+						AudioPlayer.play(AudioClip.for_resource("sorry"));
+					}
 					Popup.widget(get_engine(),DialogWidget.message("You clicked the wrong shape!","Oh no!", null));
 				}
 				else if(i.equals("tri")) //CORRECT!
 				{
+					IFDEF("target_android") {
+						AudioPlayer.play(AudioClip.for_resource("nice"));
+					}
 					Popup.widget(get_engine(),DialogWidget.message("You clicked the correct shape!","Congratulations!", "okay3",true).set_listener(this));
 				}
 				else if(i.equals("okay3")) {
