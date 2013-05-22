@@ -82,7 +82,7 @@ class shapes2 : AlignWidget, EventReceiver
 		else if(timer == 0){
 			animate_stop();
 			Popup.widget(get_engine(),DialogWidget.message("TRY AGAIN!","THANK YOU!"));
-			Popup.widget(get_engine(),DialogWidget.message("YOU ONLY GOT TWO(2) POINTS","ATTENDTION!", "back",true).set_listener(this));		
+			Popup.widget(get_engine(),DialogWidget.message("YOU ONLY GOT TWO(1) POINTS","ATTENTION!", "back",true).set_listener(this));		
 		}
 		invalidate();
 	}

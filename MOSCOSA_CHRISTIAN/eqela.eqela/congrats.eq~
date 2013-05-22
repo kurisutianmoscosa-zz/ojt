@@ -12,7 +12,6 @@ class congrats : AlignWidget, EventReceiver
 		v.app = app;
 		return(v);	
 	}
-
 	public override void initialize() {
 		base.initialize();
 			
@@ -21,12 +20,11 @@ class congrats : AlignWidget, EventReceiver
 		vb.add_vbox(0, ButtonWidget.instance().set_text("OK").set_event("ok"));	
 
 		IFDEF("target_android") {
-					AudioPlayer.play(AudioClip.for_resource("cong"));
-			}	
+		AudioPlayer.play(AudioClip.for_resource("cong"));
+		}	
 		ELSE {
-		Log.message("music");
-				}
-
+			Log.message("music");
+		}
 	}	
 	public void on_event(Object o) {
 	if(o!=null)
@@ -37,9 +35,7 @@ class congrats : AlignWidget, EventReceiver
 				if(i.equals("ok"))
 				{
 					s.show(this, menuWidget.create(AlignWidget.instance()), CrossFadeTransition.instance());
-				}
-				
-				
+				}	
 			}
 		}
 	}		

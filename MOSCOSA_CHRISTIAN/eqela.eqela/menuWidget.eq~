@@ -23,20 +23,19 @@ class menuWidget : AlignWidget, EventReceiver
 	
 		add_align(0, 0, vb = VBoxWidget.instance());
 		set_background(ImageWidget.for_icon("bg"));
+	
+		add_align(0, -0.1, bw = ButtonWidget.instance().set_text("Shapes Everywhere").set_event("shapes").set_font(Font.instance("3mm")));
+		add_align(0, 0.2, bw = ButtonWidget.instance().set_text("Learn Alphabet").set_event("alphabet").set_font(Font.instance("3mm")));		
+		add_align(0, 0.5, bw = ButtonWidget.instance().set_text("Deal with Numbers").set_event("number").set_font(Font.instance("3mm")));
 		
 		IFDEF("target_android") {
-		AudioPlayer.play(AudioClip.for_resource("welcome1"));
+			AudioPlayer.play(AudioClip.for_resource("welcome1"));
 		}	
 		ELSE {
 			Log.message("music");
 		}
 
-		add_align(0, -0.1, bw = ButtonWidget.instance().set_text("Shapes Everywhere").set_event("shapes").set_font(Font.instance("3mm")));
-		add_align(0, 0.2, bw = ButtonWidget.instance().set_text("Learn Alphabet").set_event("alphabet").set_font(Font.instance("3mm")));		
-		add_align(0, 0.5, bw = ButtonWidget.instance().set_text("Deal with Numbers").set_event("number").set_font(Font.instance("3mm")));
-
-
-		}
+	}
 	public void on_event(Object o) {
 	if(o!=null)
 	{
@@ -55,6 +54,10 @@ class menuWidget : AlignWidget, EventReceiver
 				{
 					s.show(this, alphabet.create(AlignWidget.instance()), CrossFadeTransition.instance());
 				}
+				else if(i.equals("yes1"))
+				{
+				Popup.widget(get_engine(),DialogWidget.message("THANK YOU!","ATTENTION!", null)set_listener(this));
+				}
 				else if(i.equals("yes"))
 				{
 					SystemEnvironment.instance().terminate(0);
@@ -62,12 +65,13 @@ class menuWidget : AlignWidget, EventReceiver
 			}				
 		}	
 	}
-
+	
 	public override bool on_key_press(KeyEvent e) {
 		String a;
 		a = e.get_name();
 		if(a.equals("back") || a.equals("escape")) {
-			Popup.widget(get_engine(), ui = DialogWidget.yesno("Are you sure you want to exit?", "Notification!", "yes", null).set_listener(this));
+			
+			Popup.widget(get_engine(), ui = DialogWidget.yesno("Are you sure you want to exit?", "Notification!", "yes1", null).set_listener(this));
 		}
 		return(true);
 	}

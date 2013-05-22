@@ -61,11 +61,12 @@ class menuWidget : AlignWidget, EventReceiver
 			}				
 		}	
 	}
-
+	
 	public override bool on_key_press(KeyEvent e) {
 		String a;
 		a = e.get_name();
 		if(a.equals("back") || a.equals("escape")) {
+			
 			Popup.widget(get_engine(), ui = DialogWidget.yesno("Are you sure you want to exit?", "Notification!", "yes", null).set_listener(this));
 		}
 		return(true);

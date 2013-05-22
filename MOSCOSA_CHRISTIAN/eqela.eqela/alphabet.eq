@@ -12,16 +12,11 @@ class alphabet : AlignWidget, EventReceiver
 		v.app = app;
 		return(v);	
 	}
-
 	public override void initialize() {
 		base.initialize();
 		add_align(0 , -1, vs = VScrollBoxWidget.instance());
 		vs.add_vbox(0, vb = VBoxWidget.instance());
 		set_background(ImageWidget.for_icon("sun"));	
-		
-			
-		
-		//ALPHABET
 		
 		var grid = FixedGridWidget.instance(2,13);
 		vs.add_vbox(0, grid);
@@ -46,7 +41,7 @@ class alphabet : AlignWidget, EventReceiver
 		grid.add(ButtonWidget.instance().set_text("S").set_event("19"));
 		grid.add(ButtonWidget.instance().set_text("T").set_event("20"));
 		grid.add(ButtonWidget.instance().set_text("U").set_event("21"));
-		grid.add(ButtonWidget.instance().set_text("v").set_event("22"));
+		grid.add(ButtonWidget.instance().set_text("V").set_event("22"));
 		grid.add(ButtonWidget.instance().set_text("W").set_event("23"));
 		grid.add(ButtonWidget.instance().set_text("X").set_event("24"));
 		grid.add(ButtonWidget.instance().set_text("Y").set_event("25"));
@@ -54,9 +49,7 @@ class alphabet : AlignWidget, EventReceiver
 		add_align(-1, 1, bw = ButtonWidget.instance().set_text("Back").set_event("back"));
 
 		grid.set_width_request_override(px("40mm"));
-		bw.set_width_request_override(px("10mm"));
-	
-			
+		bw.set_width_request_override(px("10mm"));			
 	}
 			
 	public void on_event(Object o) {
@@ -64,6 +57,8 @@ class alphabet : AlignWidget, EventReceiver
 	{
 		if(o is String)
 			{
+			var tar = "target_android";
+			
 				var i = o as String;
 				if(i.equals("back"))
 				{

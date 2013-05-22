@@ -12,16 +12,11 @@ class alphabet : AlignWidget, EventReceiver
 		v.app = app;
 		return(v);	
 	}
-
 	public override void initialize() {
 		base.initialize();
 		add_align(0 , -1, vs = VScrollBoxWidget.instance());
 		vs.add_vbox(0, vb = VBoxWidget.instance());
 		set_background(ImageWidget.for_icon("sun"));	
-		
-			
-		
-		//ALPHABET
 		
 		var grid = FixedGridWidget.instance(2,13);
 		vs.add_vbox(0, grid);
@@ -46,7 +41,7 @@ class alphabet : AlignWidget, EventReceiver
 		grid.add(ButtonWidget.instance().set_text("S").set_event("19"));
 		grid.add(ButtonWidget.instance().set_text("T").set_event("20"));
 		grid.add(ButtonWidget.instance().set_text("U").set_event("21"));
-		grid.add(ButtonWidget.instance().set_text("v").set_event("22"));
+		grid.add(ButtonWidget.instance().set_text("V").set_event("22"));
 		grid.add(ButtonWidget.instance().set_text("W").set_event("23"));
 		grid.add(ButtonWidget.instance().set_text("X").set_event("24"));
 		grid.add(ButtonWidget.instance().set_text("Y").set_event("25"));
@@ -54,9 +49,7 @@ class alphabet : AlignWidget, EventReceiver
 		add_align(-1, 1, bw = ButtonWidget.instance().set_text("Back").set_event("back"));
 
 		grid.set_width_request_override(px("40mm"));
-		bw.set_width_request_override(px("10mm"));
-	
-			
+		bw.set_width_request_override(px("10mm"));			
 	}
 			
 	public void on_event(Object o) {
@@ -75,16 +68,15 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("leta"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("A for ANDROID","The new Alphabet", null));
-
 				}
+
+
 				else if(i.equals("2"))
 				{
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("letb"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("B for BLUETOOTH","The new Alphabet", null));
 				}
 				else if(i.equals("3"))
@@ -92,7 +84,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("letc"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("C for CHAT","The new Alphabet", null));
 				}
 				else if(i.equals("4")) 
@@ -100,7 +91,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("letd"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("D for DRUPAL","The new Alphabet", null));
 				}
 				else if(i.equals("5"))
@@ -108,7 +98,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("lete"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("E for EMAIL","The new Alphabet", null));
 				}
 				else if(i.equals("6"))
@@ -116,7 +105,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("letf"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("F for FACEBOOK","The new Alphabet", null));
 				}	
 				else if(i.equals("7"))
@@ -124,7 +112,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("letg"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("G for GOOGLE","The new Alphabet", null));
 				}
 				else if(i.equals("8"))
@@ -132,7 +119,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("leth"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("H for HEWLETT PACKARD","The new Alphabet", null));
 				}
 				else if(i.equals("9"))
@@ -140,7 +126,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("leti"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("I for Iphone","The new Alphabet", null));
 				}
 				else if(i.equals("10"))
@@ -148,7 +133,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("letj"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("J for JAVA","The new Alphabet", null));
 				}
 				else if(i.equals("11"))
@@ -156,7 +140,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("letk"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("K for KINGSTON","The new Alphabet", null));
 				}
 				else if(i.equals("12"))
@@ -164,7 +147,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("letl"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("L for LAPTOP","The new Alphabet", null));
 				}
 			 	else if(i.equals("13"))
@@ -172,7 +154,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("letm"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("M for MESSAGER","The new Alphabet", null));
 				}
 				else if(i.equals("14"))
@@ -180,7 +161,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("letn"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("N for NETWORK","The new Alphabet", null));
 				}
 				else if(i.equals("15"))
@@ -188,7 +168,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("leto"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("O for OPEN SOURCE","The new Alphabet", null));
 				}
 				else if(i.equals("16"))
@@ -196,7 +175,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("letp"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("P for PHP","The new Alphabet", null));
 				}
 				else if(i.equals("17"))
@@ -204,7 +182,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("letq"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("Q for QWERTY","The new Alphabet", null));
 				}
 				else if(i.equals("18"))
@@ -212,7 +189,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("letr"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("R for RAM","The new Alphabet", null));
 				}
 				else if(i.equals("19"))
@@ -220,7 +196,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("lets"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("S for SMARTPHONE","The new Alphabet", null));
 				}
 				else if(i.equals("20"))
@@ -228,7 +203,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("lett"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("T for TWITTER","The new Alphabet", null));
 				}
 				else if(i.equals("21"))
@@ -236,7 +210,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("letu"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("U for USB","The new Alphabet", null));
 				}
 				else if(i.equals("22"))
@@ -244,7 +217,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("letv"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("V for VIRTUALIZATION","The new Alphabet", null));
 				}
 				else if(i.equals("23"))
@@ -252,7 +224,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("letw"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("W for WEB SITE","The new Alphabet", null));
 				}
 				else if(i.equals("24"))
@@ -260,7 +231,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("letx"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("X for XP (WINDOWS XP)","The new Alphabet", null));
 				}
 				else if(i.equals("25"))
@@ -268,7 +238,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("lety"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("Y for YOUTUBE","The new Alphabet", null));
 				}
 				else if(i.equals("26"))
@@ -276,7 +245,6 @@ class alphabet : AlignWidget, EventReceiver
 					IFDEF("target_android") {
 						AudioPlayer.play(AudioClip.for_resource("letz"));
 					}
-				}
 					Popup.widget(get_engine(),DialogWidget.message("Z for ZIP","The new Alphabet", null));
 				}	
 			  

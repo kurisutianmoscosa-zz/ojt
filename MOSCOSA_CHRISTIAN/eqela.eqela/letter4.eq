@@ -48,7 +48,8 @@ class letter4 : AlignWidget, EventReceiver
 						s.show(this, letter5.create(AlignWidget.instance()), CrossFadeTransition.instance());			
 					}				
 					else if(i.equals("answer")) {
-						if(tw.get_text().equals("4")) {				
+						if(tw.get_text().equals("4")) {	
+							animate_stop();		
 							Popup.widget(get_engine(),DialogWidget.message("You Got it Correct!","Congratulations!", "okay2",true).set_listener(this));		
 						}
 						else {			
@@ -67,8 +68,7 @@ class letter4 : AlignWidget, EventReceiver
 		}
 		else if(timer == 0){
 			animate_stop();
-			Popup.widget(get_engine(),DialogWidget.message("TRY AGAIN!","ATTENTION!"));
-			Popup.widget(get_engine(),DialogWidget.message("TIMES UP!","ATTENDTION!", "main",true).set_listener(this));		
+			Popup.widget(get_engine(),DialogWidget.message("TIMES UP!","ATTENTION!", "main",true).set_listener(this));		
 		}
 		invalidate();
 	}

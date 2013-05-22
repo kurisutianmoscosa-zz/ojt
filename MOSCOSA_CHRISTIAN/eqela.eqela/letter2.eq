@@ -46,8 +46,9 @@ class letter2 : AlignWidget, EventReceiver
 						s.show(this, letter3.create(AlignWidget.instance()), CrossFadeTransition.instance());			
 					}				
 					else if(i.equals("answer")) {
-						if(tw.get_text().equals("11")) {				
-							Popup.widget(get_engine(),DialogWidget.message("You Got it Correct!","Congratulations!", "okay2",true).set_listener(this));		
+						if(tw.get_text().equals("11")) {
+							animate_stop();				
+							Popup.widget(get_engine(),DialogWidget.message("You Got it Correct!","Congratulations!", "okay2",true).set_listener(this));	
 						}
 						else {			
 							Popup.widget(get_engine(),DialogWidget.message("You are wrong", "Attention"));
@@ -65,8 +66,7 @@ class letter2 : AlignWidget, EventReceiver
 		}
 		else if(timer == 0){
 			animate_stop();
-			Popup.widget(get_engine(),DialogWidget.message("TRY AGAIN!","ATTENTION!"));
-			Popup.widget(get_engine(),DialogWidget.message("TIMES UP!","ATTENDTION!", "main",true).set_listener(this));		
+			Popup.widget(get_engine(),DialogWidget.message("TIMES UP!","ATTENTION!", "main",true).set_listener(this));		
 		}
 		invalidate();
 	}

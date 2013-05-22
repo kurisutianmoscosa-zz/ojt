@@ -12,7 +12,6 @@ class congrats : AlignWidget, EventReceiver
 		v.app = app;
 		return(v);	
 	}
-
 	public override void initialize() {
 		base.initialize();
 			
@@ -26,7 +25,6 @@ class congrats : AlignWidget, EventReceiver
 		ELSE {
 			Log.message("music");
 		}
-
 	}	
 	public void on_event(Object o) {
 	if(o!=null)
@@ -37,9 +35,7 @@ class congrats : AlignWidget, EventReceiver
 				if(i.equals("ok"))
 				{
 					s.show(this, menuWidget.create(AlignWidget.instance()), CrossFadeTransition.instance());
-				}
-				
-				
+				}	
 			}
 		}
 	}		
