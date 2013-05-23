@@ -20,34 +20,13 @@ class alphabet : AlignWidget, EventReceiver
 		
 		var grid = FixedGridWidget.instance(2,13);
 		vs.add_vbox(0, grid);
-		grid.add(ButtonWidget.instance().set_text("A").set_event("1"));
-		grid.add(ButtonWidget.instance().set_text("B").set_event("2"));
-		grid.add(ButtonWidget.instance().set_text("C").set_event("3"));
-		grid.add(ButtonWidget.instance().set_text("D").set_event("4"));
-		grid.add(ButtonWidget.instance().set_text("E").set_event("5"));
-		grid.add(ButtonWidget.instance().set_text("F").set_event("6"));
-		grid.add(ButtonWidget.instance().set_text("G").set_event("7"));
-		grid.add(ButtonWidget.instance().set_text("H").set_event("8"));
-		grid.add(ButtonWidget.instance().set_text("I").set_event("9"));
-		grid.add(ButtonWidget.instance().set_text("J").set_event("10"));
-		grid.add(ButtonWidget.instance().set_text("K").set_event("11"));
-		grid.add(ButtonWidget.instance().set_text("L").set_event("12"));
-		grid.add(ButtonWidget.instance().set_text("M").set_event("13"));
-		grid.add(ButtonWidget.instance().set_text("N").set_event("14"));
-		grid.add(ButtonWidget.instance().set_text("O").set_event("15"));
-		grid.add(ButtonWidget.instance().set_text("P").set_event("16"));
-		grid.add(ButtonWidget.instance().set_text("Q").set_event("17"));
-		grid.add(ButtonWidget.instance().set_text("R").set_event("18"));
-		grid.add(ButtonWidget.instance().set_text("S").set_event("19"));
-		grid.add(ButtonWidget.instance().set_text("T").set_event("20"));
-		grid.add(ButtonWidget.instance().set_text("U").set_event("21"));
-		grid.add(ButtonWidget.instance().set_text("V").set_event("22"));
-		grid.add(ButtonWidget.instance().set_text("W").set_event("23"));
-		grid.add(ButtonWidget.instance().set_text("X").set_event("24"));
-		grid.add(ButtonWidget.instance().set_text("Y").set_event("25"));
-		grid.add(ButtonWidget.instance().set_text("Z").set_event("26"));
+		int i=0;
+		int c;
+		for(c=65;c<=90;c++) {
+			i++;
+			grid.add(ButtonWidget.instance().set_text(String.for_character(c)).set_event(String.for_integer(i)));
+		}
 		add_align(-1, 1, bw = ButtonWidget.instance().set_text("Back").set_event("back"));
-
 		grid.set_width_request_override(px("40mm"));
 		bw.set_width_request_override(px("10mm"));			
 	}
@@ -72,8 +51,6 @@ class alphabet : AlignWidget, EventReceiver
 					}
 					Popup.widget(get_engine(),DialogWidget.message("A for ANDROID","The new Alphabet", null));
 				}
-
-
 				else if(i.equals("2"))
 				{
 					IFDEF("target_android") {
