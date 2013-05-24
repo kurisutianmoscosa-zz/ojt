@@ -24,20 +24,13 @@ class shapes4 : AlignWidget, EventReceiver
 		add_align(0.35, -0.55, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("heart"),80,60)).set_event("heart"));
 		add_align(-0.35, -0.55, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("diamond"),57,57)).set_event("dia"));
 		add_align(0, -0.55, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("star"),57,56)).set_event("str"));
-
-		//LABELS
-		
 		add_align(0.65, -0.60, LabelWidget.instance().set_text("HEART").set_color(Color.instance("#000000")));
 		add_align(-0.65, -0.60, LabelWidget.instance().set_text("DIAMOND").set_color(Color.instance("#000000")));
 		add_align(0, -0.64, LabelWidget.instance().set_text("STAR").set_color(Color.instance("#000000")));
-
 		add_align(0.3, -1, y= LabelWidget.instance().set_text("Time:").set_color(Color.instance("#000000")).set_font(Font.instance("5mm")));
 		add_align(0.6, -1,  y= LabelWidget.for_string("".append(String.for_integer(timer))).set_color(Color.instance("#000000")).set_font(Font.instance("5mm")));
-
-
-		add_align(0, 0, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("heart"),57,56))); //CORRECT!
-		vb.add_vbox(0, ButtonWidget.instance().set_text("Back").set_event("back"));
-		
+		add_align(0, 0, ImageButtonWidget.instance().set_image(Image.resize(Image.icon("heart"),57,56)));
+		vb.add_vbox(0, ButtonWidget.instance().set_text("Back").set_event("back"));	
 	}
 			
 	public void on_event(Object o) {

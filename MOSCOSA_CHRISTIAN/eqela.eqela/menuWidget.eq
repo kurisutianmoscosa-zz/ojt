@@ -9,15 +9,13 @@ class menuWidget : AlignWidget, EventReceiver
 	VBoxWidget vb;
 	DialogWidget ui;
 	ButtonWidget bw;
-	
-	
+		
 	public static menuWidget create(AlignWidget app) {
 		var v = new menuWidget();
 		v.app = app;
 		return(v);
 		}
 
-	
 	public override void initialize() {
 		base.initialize();
 	
@@ -26,15 +24,13 @@ class menuWidget : AlignWidget, EventReceiver
 	
 		add_align(0, -0.1, bw = ButtonWidget.instance().set_text("Shapes Everywhere").set_event("shapes").set_font(Font.instance("3mm")));
 		add_align(0, 0.2, bw = ButtonWidget.instance().set_text("Learn Alphabet").set_event("alphabet").set_font(Font.instance("3mm")));		
-		add_align(0, 0.5, bw = ButtonWidget.instance().set_text("Deal with Numbers").set_event("number").set_font(Font.instance("3mm")));
-		
+		add_align(0, 0.5, bw = ButtonWidget.instance().set_text("Deal with Numbers").set_event("number").set_font(Font.instance("3mm")));	
 		IFDEF("target_android") {
 			AudioPlayer.play(AudioClip.for_resource("welcome1"));
 		}	
 		ELSE {
 			Log.message("music");
 		}
-
 	}
 	public void on_event(Object o) {
 	if(o!=null)
@@ -44,7 +40,7 @@ class menuWidget : AlignWidget, EventReceiver
 				var i = o as String;
 				if(i.equals("number"))
 				{
-					s.show(this, letter.create(AlignWidget.instance()), CrossFadeTransition.instance());
+					s.show(this, number.create(AlignWidget.instance()), CrossFadeTransition.instance());
 				}
 				else if(i.equals("shapes"))
 				{
